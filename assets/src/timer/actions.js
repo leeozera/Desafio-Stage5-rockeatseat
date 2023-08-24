@@ -9,6 +9,7 @@ export function togglePlay() {
 
 export function toggleReset() {
   state.isRunning = false;
+  document.documentElement.classList.remove("isRunning");
   uptadeDisplay();
 }
 
@@ -19,7 +20,7 @@ export function increaseTheTimer() {
 
   let minutes = Number(el.minutes.textContent);
   let secondes = Number(el.secondes.textContent);
-  secondes = secondes + 10;
+  secondes = secondes + 5;
 
   if (secondes > 60) {
     minutes++;
@@ -36,7 +37,7 @@ export function slowDownTimer() {
 
   let minutes = Number(el.minutes.textContent);
   let secondes = Number(el.secondes.textContent);
-  secondes = secondes - 10;
+  secondes = secondes - 5;
 
   if (secondes < 0) {
     minutes--;

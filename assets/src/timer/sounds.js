@@ -5,6 +5,10 @@ export const audios = {
   fire: new Audio("./assets/Lareira.wav"),
 };
 
+for (const key in audios) {
+  audios[key].loop = true;
+}
+
 export function toggleAudio(audioName) {
   const audio = audios[audioName];
 
