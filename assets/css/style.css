@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Montserrat:ital,wght@1,600&family=Mulish:wght@600;900&family=Roboto:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  font-family: "Roboto", sans-serif;
+}
+
+html:not(.isRunning) #pause,
+html.isRunning #play {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  gap: 9.5rem;
+}
+
+#timer {
+  margin: auto 0;
+}
+
+#timer .display {
+  display: flex;
+  font-size: 12.6rem;
+  color: #323238;
+}
+
+#timer .controls {
+  display: flex;
+  gap: 4rem;
+}
+#timer .controls button {
+  background: transparent;
+  border: none;
+  font-size: 4.8rem;
+  cursor: pointer;
+  color: #323238;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+#cards .card {
+  width: 13.8rem;
+  height: 15.2rem;
+  background: #e1e1e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.4rem;
+  cursor: pointer;
+}
+
+#cards .card svg {
+  fill: #323238;
+}
+
+#cards .card.active svg,
+#cards .card:hover svg {
+  fill: #fff;
+}
+
+#cards .card.florest.active,
+#cards .card.florest:hover {
+  background-color: #3cb043;
+}
+#cards .card.rain.active,
+#cards .card.rain:hover {
+  background-color: #0060ff;
+}
+#cards .card.coffe.active,
+#cards .card.coffe:hover {
+  background-color: #964b00;
+}
+#cards .card.fireplace.active,
+#cards .card.fireplace:hover {
+  background-color: #e25922;
+}
+
+@media (max-width: 769px) {
+  #app {
+    flex-direction: column;
+  }
+}
